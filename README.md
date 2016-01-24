@@ -12,4 +12,19 @@ Koa is a new framework designed by the team behind Express.
 $ npm install koa
 ```
 
+### Usage
+
+The hello world application:
+
+```js
+var koa = require('koa');
+var app = koa();
+
+app.use(function *(){
+  this.body = 'Hello World';
+});
+
+app.listen(3000);
+```
+
 ## Koa vs Express vs Vanilla Node Http

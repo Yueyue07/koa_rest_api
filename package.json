@@ -1,0 +1,30 @@
+{
+  "name": "koa_rest_api",
+  "version": "1.0.0",
+  "description": "This is project to make a single resource REST app using koa",
+  "main": "server.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha test/**/*test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yueyue07/koa_rest_api.git"
+  },
+  "author": "Chris Lee; Yueyue Qin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Yueyue07/koa_rest_api/issues"
+  },
+  "homepage": "https://github.com/Yueyue07/koa_rest_api#readme",
+  "dependencies": {
+    "koa": "^1.1.2",
+    "mongoose": "^4.3.7"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "chai-http": "^1.0.0",
+    "gulp": "^3.9.0",
+    "gulp-mocha": "^2.2.0",
+    "mocha": "^2.3.4"
+  }
+}
