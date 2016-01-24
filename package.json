@@ -18,6 +18,8 @@
   "homepage": "https://github.com/Yueyue07/koa_rest_api#readme",
   "dependencies": {
     "koa": "^1.1.2",
+    "koa-body": "^1.4.0",
+    "koa-router": "^5.3.0",
     "mongoose": "^4.3.7"
   },
   "devDependencies": {
