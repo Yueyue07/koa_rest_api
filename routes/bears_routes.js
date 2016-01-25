@@ -1,11 +1,21 @@
+const Bear = require(__dirname + '/../models/bear');
+const handleError = require(__dirname + '/../lib/handle_error');
 const router = module.exports = exports = require('koa-router')({
   prefix: '/api'
 });
 var koaBody = require('koa-body')();
 
 
-router.get('/get', function *() {
-  this.body = {body:'hello'};
-  this.status = 201;
-  console.log(this.response);
+router.post('/bears', koaBody,
+  function *(next) {
+    this.body = yield Bear.create(this.request.body,(err,data) => {
+      if(err) handleError(err);
+    });
+  });
+
+
+router.get('/bears', function *(next) {
+  this.body = yield Bear.find({},(err,data) => {
+    if(err) handleError(err);
+  });
 });
