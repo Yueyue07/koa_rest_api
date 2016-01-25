@@ -27,11 +27,11 @@ app.use(function *(){
 app.listen(3000);
 ```
 
-### Koa vs Express vs Vanilla Node Http
+# Koa vs Express vs Vanilla Node Http
 
 ## Routing
 
-# Koa requires an additional router.
+### Koa requires an additional router.
 
 ```js
 var koa = require('koa');
@@ -46,7 +46,7 @@ app.use(route.post('/api/items', function*() {
 }));
 ```
 
-# Express uses a built-in router.  
+### Express uses a built-in router.  
 
 ```js
 var express = require('express');
@@ -63,7 +63,7 @@ router.route('/items')
 app.use('/api', router);
 ```
 
-# Vanilla Node relies on conditional statements
+### Vanilla Node relies on conditional statements
 
 ```js
 if (req.method === 'GET' && req.url === '/api/items') {
@@ -86,7 +86,7 @@ if (req.method === 'POST' && req.url === '/api/items') {
 
 ## Async and Callbacks
 
-# Koa
+### Koa
 Koa uses ES6 generators.  A generator function is denoted by an asterisk and returns a generator object.  By using the "yield" statement, generator functions have more flexibility in terms of when/if the function runs to completion.  By using ES6 generators, Koa avoids certain problems that may arise from multiple callbacks.  
 
 ```js
@@ -95,7 +95,7 @@ app.use(function *() {
 });
 ```
 
-# Express
+### Express
 Express relies exclusively on asyncronous callbacks.  
 
 ```js
