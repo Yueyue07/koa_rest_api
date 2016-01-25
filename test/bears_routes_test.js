@@ -41,4 +41,39 @@ describe('the bear api', () => {
         done();
       });
   });
+
+  describe('rest requests that require a bear already in db', () => {
+    beforeEach((done) => {
+      Bear.create({name: 'test bear'}, (err, data) => {
+        this.testBear = data;
+        done();
+      });
+    });
+
+    it('should be able to update a bear', (done) => {
+      chai.request(origin)
+        .put(uri + '/' + this.testBear._id)
+        .send({name: 'new bear name'})
+        .end((err, res) => {
+          expect(err).to.eql(null);
+          expect(res).to.have.status(200);
+          expect(res.text).to.eql('success');
+          done();
+        });
+    });
+
+    it('should be able to delete a bear', (done) => {
+      chai.request(origin)
+        .delete(uri + '/' + this.testBear._id)
+        .end((err, res) => {
+          expect(err).to.eql(null);
+          expect(res).to.have.status(200);
+          expect(res.text).to.eql('success');
+          done();
+        });
+    });
+
+
+
+  });
 });
