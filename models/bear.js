@@ -6,4 +6,4 @@ var bearSchema = new mongoose.Schema({
   fishPreference: {type:String,default: 'salmons'}
 });
 
-var Bear = module.exports = exports = new bearSchema('Bear', bearSchema);
+var Bear = module.exports = exports = mongoose.model('Bear', bearSchema);
